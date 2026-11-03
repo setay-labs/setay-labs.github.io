@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="3jApqZOtScn9SAin-lsRWq71JZSx7ffdME8_0mI-U0U" />
+  <meta name="description" content="Setay Labs builds fast, zero-dependency, 100% client-side engineering, electrical, trade, and workplace finance calculators with instant shareable results.">
+  <meta name="keywords" content="setay labs, engineering calculators, solar battery calculator, freelance hourly rate calculator, 1099 to w2 calculator, free online utilities">
+  <meta name="author" content="Setay Labs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://setay-labs.github.io/">
+  <title>Setay Labs — Free Engineering, Trade &amp; Finance Calculators</title>
+
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://setay-labs.github.io/">
+  <meta property="og:title" content="Setay Labs — Free Engineering, Trade &amp; Finance Calculators">
+  <meta property="og:description" content="Fast, 100% client-side web calculators for off-grid solar sizing, freelance 1099 vs. W-2 billing rates, trade estimation, and technical workflows.">
+  <meta property="og:site_name" content="Setay Labs">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Setay Labs — Free Engineering, Trade &amp; Finance Calculators">
+  <meta name="twitter:description" content="Fast, 100% client-side web calculators for off-grid solar sizing, freelance 1099 vs. W-2 billing rates, trade estimation, and technical workflows.">
+
+  <!-- Schema.org CollectionPage & ItemList JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Setay Labs — Free Engineering, Trade & Finance Calculators",
+    "url": "https://setay-labs.github.io/",
+    "description": "Directory of fast, 100% client-side engineering, electrical, DIY trade, and workplace finance calculators by Setay Labs.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Off-Grid Solar & Battery Bank Sizing Calculator",
+          "url": "https://setay-labs.github.io/solar-battery-calculator/",
+          "description": "Calculate required usable battery capacity (Ah, kWh) for LiFePO4 and AGM banks plus minimum solar panel array wattage from daily appliance loads."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Freelance True Hourly & Day Rate Calculator (1099 vs. W-2)",
+          "url": "https://setay-labs.github.io/freelance-hourly-rate-calculator/",
+          "description": "Convert your target annual take-home or W-2 salary into an exact 1099 billable hourly, full-day, and retainer rate factoring in utilization, taxes, and overhead."
+        }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #151f32;
+      --card-subtle: #1e293b;
+      --card-border: #334155;
+      --card-border-focus: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-cyan: #0284c7;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.55;
+      padding: 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 28px 12px 20px 12px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto 18px auto;
+    }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge {
+      font-size: 0.78rem;
+      font-weight: 600;
+      background-color: var(--card-subtle);
+      border: 1px solid var(--card-border);
+      color: #cbd5e1;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    /* Filter & Search Bar */
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 14px 16px;
+      border-radius: 12px;
+    }
+
+    .search-input {
+      flex: 1 1 260px;
+      min-height: 44px;
+      padding: 8px 14px;
+      background-color: var(--bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--card-border-focus);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    }
+
+    .category-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cat-btn {
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background-color: var(--card-subtle);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+
+    .cat-btn:hover,
+    .cat-btn.active {
+      background-color: var(--accent-cyan);
+      border-color: var(--accent-cyan);
+      color: #ffffff;
+    }
+
+    /* Grid of Tool Cards */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: 720px) {
+      .tools-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .tool-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--card-border-focus);
+      box-shadow: 0 8px 28px rgba(2, 132, 199, 0.18);
+    }
+
+    .tool-card-top {
+      margin-bottom: 18px;
+    }
+
+    .tool-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .tool-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background-color: var(--card-subtle);
+      color: #38bdf8;
+      border: 1px solid var(--card-border);
+    }
+
+    .tool-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .tool-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .tool-features {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tool-features li {
+      font-size: 0.76rem;
+      background-color: var(--bg);
+      color: #cbd5e1;
+      padding: 4px 8px;
+      border-radius: 5px;
+      border: 1px solid rgba(51, 65, 85, 0.7);
+    }
+
+    .tool-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 44px;
+      background-color: var(--accent-cyan);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border-radius: 8px;
+      padding: 10px 16px;
+      transition: background-color 0.15s ease;
+    }
+
+    .tool-card:hover .tool-cta {
+      background-color: #0369a1;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px 12px;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>🧭 Setay Labs Utility Hub 🧭</h1>
+    <p>Fast, instant-loading engineering, electrical, trade, and workplace finance calculators. 100% in-browser execution with shareable calculation links and zero signups.</p>
+    <div class="trust-badges">
+      <span class="trust-badge">⚡ 100% Client-Side Execution</span>
+      <span class="trust-badge">🔗 Shareable Calculation URLs</span>
+      <span class="trust-badge">🔒 Zero Data Stored or Tracked</span>
+    </div>
+  </header>
+
+  <section class="filter-bar" aria-label="Filter calculators">
+    <input type="search" id="toolSearch" class="search-input" placeholder="Search calculators (e.g., solar, lifepo4, 1099, hourly rate)..." aria-label="Search calculators">
+    <div class="category-pills">
+      <button type="button" class="cat-btn active" data-cat="all">All Utilities</button>
+      <button type="button" class="cat-btn" data-cat="trade">Trade &amp; Electrical</button>
+      <button type="button" class="cat-btn" data-cat="finance">Workplace Finance</button>
+    </div>
+  </section>
+
+  <main class="tools-grid" id="toolsGrid">
+    <!-- Tool 1: Off-Grid Solar & Battery Sizing Calculator -->
+    <a href="https://setay-labs.github.io/solar-battery-calculator/" class="tool-card" data-category="trade" data-keywords="solar battery bank sizing calculator lifepo4 agm amp hours watt hours off grid rv van">
+      <div class="tool-card-top">
+        <div class="tool-meta">
+          <span class="tool-category">Clean Energy / Electrical DIY</span>
+        </div>
+        <h2 class="tool-title">⚡ Off-Grid Solar &amp; Battery Bank Sizing Calculator</h2>
+        <p class="tool-desc">Calculate required usable battery bank capacity (Ah &amp; kWh), minimum solar panel array wattage, and MPPT charge controller rating from daily appliance loads.</p>
+        <ul class="tool-features">
+          <li>12V / 24V / 48V Systems</li>
+          <li>LiFePO4 (85% DoD) &amp; AGM</li>
+          <li>Appliance Load Presets</li>
+          <li>Shareable Spec Sheet</li>
+        </ul>
+      </div>
+      <span class="tool-cta">Launch Solar &amp; Battery Calculator &rarr;</span>
+    </a>
+
+    <!-- Tool 2: Freelance True Hourly & Day Rate Calculator -->
+    <a href="https://setay-labs.github.io/freelance-hourly-rate-calculator/" class="tool-card" data-category="finance" data-keywords="freelance hourly rate calculator 1099 to w2 conversion day rate retainer salary billable utilization self employment tax">
+      <div class="tool-card-top">
+        <div class="tool-meta">
+          <span class="tool-category">Workplace Finance / 1099 vs. W-2</span>
+        </div>
+        <h2 class="tool-title">💼 Freelance True Hourly &amp; Day Rate Calculator</h2>
+        <p class="tool-desc">Convert your target annual take-home or W-2 salary into an exact 1099 billable hourly rate, full-day rate, and monthly retainer factoring in utilization, taxes, and overhead.</p>
+        <ul class="tool-features">
+          <li>1099 vs. W-2 Wage Multiplier</li>
+          <li>Billable Utilization Split</li>
+          <li>Overhead &amp; Benefits Tracker</li>
+          <li>Client Rate Card Export</li>
+        </ul>
+      </div>
+      <span class="tool-cta">Launch Freelance Rate Calculator &rarr;</span>
+    </a>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Setay Labs &bull; Fast, Zero-Dependency Web Utilities</p>
+  </footer>
+</div>
+
+<script>
+  (function() {
+    "use strict";
+    var searchInput = document.getElementById("toolSearch");
+    var catBtns = document.querySelectorAll(".cat-btn");
+    var cards = document.querySelectorAll(".tool-card");
+    var activeCat = "all";
+
+    function filterCards() {
+      var q = (searchInput.value || "").toLowerCase().trim();
+      cards.forEach(function(card) {
+        var cat = card.getAttribute("data-category");
+        var text = (card.textContent + " " + card.getAttribute("data-keywords")).toLowerCase();
+        var matchesCat = (activeCat === "all" || cat === activeCat);
+        var matchesQuery = (!q || text.indexOf(q) !== -1);
+        card.style.display = (matchesCat && matchesQuery) ? "flex" : "none";
+      });
+    }
+
+    searchInput.addEventListener("input", filterCards);
+
+    catBtns.forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        catBtns.forEach(function(b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        activeCat = btn.getAttribute("data-cat");
+        filterCards();
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
